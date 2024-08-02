@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demogitsvc
+spec:
+  type: NodePort
+  ports:
+    - nodePort: 32122
+      port: 9001
+      targetPort: 80
+  selector:
+    code: gitrepo
+  

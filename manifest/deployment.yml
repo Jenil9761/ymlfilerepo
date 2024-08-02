@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demogit
+  labels: 
+    name: demogit
+spec:
+  replicas: 2
+  minReadySeconds: 5
+  strategy:
+    rollingUpdate:    
+      maxSurge: 2 
+      maxUnavailable: 0
+    type: RollingUpdate
+  selector:
+    matchLabels :
+      code: gitrepo
+  template:
+    metadata:
+      name: dpod
+      labels:
+        code: gitrepo
+    spec:
+      containers: 
+        - name: demogit
+          image: jenil9761/homzy:v1
+   
