@@ -5,7 +5,7 @@ metadata:
   labels: 
     name: demogit
 spec:
-  replicas: 2
+  replicas: 20
   minReadySeconds: 5
   strategy:
     rollingUpdate:    
